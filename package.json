@@ -1,0 +1,24 @@
+{
+  "name": "tdd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "model.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FriiZe/TDD.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FriiZe/TDD/issues"
+  },
+  "homepage": "https://github.com/FriiZe/TDD#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "chai-like": "^1.1.1",
+    "chai-things": "^0.2.0"
+  }
+}
