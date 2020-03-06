@@ -1,8 +1,7 @@
 module.exports = {
     add(str) {
-        let elmts = str.split(',')
         let result = 0 
-        for (elmt of elmts) {
+        for (elmt of str.split(',')) {
             result += parseFloat(elmt)
         }
          return result.toFixed(1)
