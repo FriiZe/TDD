@@ -16,7 +16,7 @@ describe('Test TDD', () => {
             assert.equal(model.leapyear(1100),false)
         })
         it('test with a year is a LEAPYEAR (Divisible by 4 but not by 100)', () => {
-            assert.equal(model.leapyear(2018),true)
+            assert.equal(model.leapyear(2008),true)
         })
     })  
 })

@@ -1,6 +1,13 @@
 module.exports = {
     leapyear(num) {
-        return Number.isInteger(num/400)
-
+        if (Number.isInteger(num/400)) { 
+            return true
+        }
+        if (Number.isInteger(num/100)) { 
+            return false
+        }
+        if (Number.isInteger(num/4) && !Number.isInteger(num/100)){
+            return true
+        }
     }
 }
