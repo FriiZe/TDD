@@ -28,5 +28,8 @@ describe('Test TDD', () => {
                 model.add("1,2,").to.throw(`Number expected but EOF found.`)
             }) 
         })
+        it('Custom separators', () => {
+            assert.equal(model.add("//sep\n2sep3"),"5.0")
+        })
     })  
 })
