@@ -12,5 +12,8 @@ describe('Test TDD', () => {
         it('The method can take 0, 1 or 2 numbers separated by comma, and returns their sum.', () => {
             assert.equal(model.add("1.1,2.2"),"3.3")
         })
+        it('Empty string return 0', () => {
+            assert.equal(model.add(""),"0")
+        })
     })  
 })
