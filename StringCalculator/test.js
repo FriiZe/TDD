@@ -19,7 +19,10 @@ describe('Test TDD', () => {
             assert.equal(model.add("1\n2,3"),"6.0")
         })
         it('Error on structure', () => {
-            expect(model.add("1\n,2,3")).to.throw()
+            //console.log(model.add("1\n,2,3"))
+            expect(function() {
+                model.add("1\n,2,3").to.throw(`Bad structure, 2 separators on the way`)
+            }) 
         })
     })  
 })
