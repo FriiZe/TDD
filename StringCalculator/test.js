@@ -15,5 +15,8 @@ describe('Test TDD', () => {
         it('Empty string return 0', () => {
             assert.equal(model.add(""),"0")
         })
+        it('newline as separator', () => {
+            assert.equal(model.add("1\n2,3"),"6")
+        })
     })  
 })
