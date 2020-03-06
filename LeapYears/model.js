@@ -1,4 +1,5 @@
 module.exports = {
-    leapyear(num) {        
+    leapyear(num) {
+        return Number.isInteger(num/400)   
     }
 }
