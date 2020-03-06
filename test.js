@@ -18,5 +18,8 @@ describe('Test TDD', () => {
         it('test with a number witch is divisible by 5 and 3', () => {
             assert.equal(model.fizzbuzz(15),"FizzBuzz")
         })
+        it('test with a number witch is not divisible by 5 and 3', () => {
+            assert.equal(model.fizzbuzz(16),"")
+        })
     })  
 })
