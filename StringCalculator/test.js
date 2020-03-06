@@ -20,7 +20,12 @@ describe('Test TDD', () => {
         })
         it('Error on structure', () => {
             expect(function() {
-                model.add("1\n,2,3").to.throw(`Bad structure, 2 separators on the way`)
+                model.add("1\n,2,3").to.throw(`Bad structure`)
+            }) 
+        })
+        it('Number expected but EOF found.', () => {
+            expect(function() {
+                model.add("1,2,").to.throw(`Number expected but EOF found.`)
             }) 
         })
     })  
