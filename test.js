@@ -8,7 +8,7 @@ chai.use(require('chai-like'));
 chai.use(require('chai-things'));
 
 describe('Test TDD', () => {
-    describe('Test FizzBuzz', () => {
+    describe('Test FizzBuzz', async () => {
         it('test with a number witch is divisible by 3', () => {
             assert.equal(model.fizzbuzz(3),"Fizz")
         })
