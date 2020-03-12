@@ -68,6 +68,18 @@ class Player {
         console.log("Il vous reste " + this.money)
     }
 
+    move(board, roll){
+        if ((this.actualPosition + roll) > (board.cells.length - 1)) {
+            let tmp = board.cells.length - this.actualPosition
+            roll -= tmp
+            this.actualPosition = roll
+            console.log("DINGDINGDING !! C'est jour de paie")
+            this.money += 200
+        } else {
+            this.actualPosition += roll
+        }
+    }
+
 }
 
 module.exports = { Player };

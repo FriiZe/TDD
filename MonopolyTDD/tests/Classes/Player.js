@@ -2,6 +2,9 @@ const chai = require('chai'); // Using Expect style
 const { Player } = require('../../src/Classes/Player');
 const { Properties } = require("../../src/Classes/Properties");
 const { Gare } = require("../../src/Classes/Gare");
+const { Board } = require("../../src/Classes/Board");
+const { Cell } = require("../../src/Classes/Cell");
+
 
 
 const { assert, expect } = chai;
@@ -9,12 +12,16 @@ const { assert, expect } = chai;
 chai.use(require('chai-like'));
 chai.use(require('chai-things'));
 
-
+let start = new Cell("Départ", "Uncolored")
 const classicProperty = new Properties("VueJS", "brown", 80, 4, 20, 60, 180, 320, 450, 40, 50)
 const gare1 = new Gare("YnovCampusNantes")
 const gare2 = new Gare("YnovCampusBordeaux")
 const gare3 = new Gare("YnovCampusLyon")
 const gare4 = new Gare("YnovCampusParis")
+
+const board = new Board()
+board.init(start, classicProperty, gare1, gare2, gare3, gare4)
+
 
 const player = new Player('Toto')
 const player2 = new Player('Tata')
@@ -97,6 +104,19 @@ describe('Test player', () => {
             player.payARent(classicProperty, player2)
             assert.equal(player.money, 9550)
             assert.equal(player2.money, 3034)
+        })
+    })
+    describe("Test move", () => {
+        it("Standard move", () => {
+            player.move(board, 3)
+            assert.equal(player.actualPosition, 3)
+        })
+        it("Right position", () => {
+            player.move(board, 4)
+            assert.equal(player.actualPosition, 1)
+        })
+        it("Gain 200e by passing by departure", () => {
+            assert.equal(player.money, 9750)
         })
     }) 
 })
