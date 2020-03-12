@@ -23,6 +23,7 @@ class Player {
     }
 
     rollADice() {
+        return Math.floor(Math.random() * Math.floor(6)) + 1
     }
 }
 
