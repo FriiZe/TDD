@@ -1,6 +1,4 @@
-const { Properties } = require("./Properties.js");
 const { Gare } = require("./Gare.js");
-const scanf = require('scanf')
 
 class Player {
     constructor(name) {
@@ -28,7 +26,6 @@ class Player {
 
     payARent(property, owner) {
         let rent = null;
-
         if (property instanceof Gare) {
             let count = 0
             for (let p of owner.propertiesList) {
@@ -38,7 +35,6 @@ class Player {
             }
             rent = property.basicRent * count
         } else {
-
             switch (property.numberHouse) {
                 case 0:
                     rent = property.basicRent
@@ -63,7 +59,6 @@ class Player {
             }
         }
         console.log("Vous payer le loyer de " + property.name + " à " + owner.name + ". Il s'élève à " + rent)
-
         this.money -= rent
         owner.money += rent
         console.log("Il vous reste " + this.money)
