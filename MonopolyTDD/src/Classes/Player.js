@@ -59,8 +59,12 @@ class Player {
             }
         }
         console.log("Vous payer le loyer de " + property.name + " à " + owner.name + ". Il s'élève à " + rent)
-        this.money -= rent
-        owner.money += rent
+        if ((this.money - rent) < 0){
+            console.log('Vous ne pouvez pas payer, il va falloir hypothequer :(')
+        }else{
+            this.money -= rent
+            owner.money += rent
+        }
         console.log("Il vous reste " + this.money)
     }
 

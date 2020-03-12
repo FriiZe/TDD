@@ -9,8 +9,6 @@ const { assert, expect } = chai;
 chai.use(require('chai-like'));
 chai.use(require('chai-things'));
 
-const player = new Player('Toto')
-const player2 = new Player('Tata')
 
 const classicProperty = new Properties("VueJS", "brown", 80, 4, 20, 60, 180, 320, 450, 40, 50)
 const gare1 = new Gare("YnovCampusNantes")
@@ -18,6 +16,8 @@ const gare2 = new Gare("YnovCampusBordeaux")
 const gare3 = new Gare("YnovCampusLyon")
 const gare4 = new Gare("YnovCampusParis")
 
+const player = new Player('Toto')
+const player2 = new Player('Tata')
 
 
 describe('Test player', () => {
@@ -60,6 +60,43 @@ describe('Test player', () => {
             player.payARent(gare4, player2)
             assert.equal(player.money, 996)
             assert.equal(player2.money, 2004)
+        })
+        it('Pay a rent with one house', () => {
+            player2.propertiesList[0].numberHouse = 1
+            player.payARent(classicProperty, player2)
+            assert.equal(player.money, 976)
+            assert.equal(player2.money, 2024)
+        })
+        it('Pay a rent with two houses', () => {
+            player2.propertiesList[0].numberHouse = 2
+            player.payARent(classicProperty, player2)
+            assert.equal(player.money, 916)
+            assert.equal(player2.money, 2084)
+        })
+        it('Pay a rent with three houses', () => {
+            player2.propertiesList[0].numberHouse = 3
+            player.payARent(classicProperty, player2)
+            assert.equal(player.money, 736)
+            assert.equal(player2.money, 2264)
+        })
+        it('Pay a rent with four houses', () => {
+            player2.propertiesList[0].numberHouse = 4
+            player.payARent(classicProperty, player2)
+            assert.equal(player.money, 416)
+            assert.equal(player2.money, 2584)
+        })
+        it('Pay a rent with four hostel : Not enough money', () => {
+            player2.propertiesList[0].numberHouse = 5
+            player.payARent(classicProperty, player2)
+            assert.equal(player.money, 416)
+            assert.equal(player2.money, 2584)
+        })
+        it('Pay a rent with four hostel : Enough money', () => {
+            player.money = 10000
+            player2.propertiesList[0].numberHouse = 5
+            player.payARent(classicProperty, player2)
+            assert.equal(player.money, 9550)
+            assert.equal(player2.money, 3034)
         })
     }) 
 })
