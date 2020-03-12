@@ -12,7 +12,7 @@ module.exports = {
     addFromATab(tab){
         result = 0 
         for (let i = 0; i < tab.length; i++) {
-            if (tab[i] === ''){
+            if (tab[i] === '' || isNaN(tab[i])){
                 throw new Error(`Bad structure, 2 separators on the way`)
             }
             result += parseFloat(tab[i])
