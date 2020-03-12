@@ -21,6 +21,9 @@ class Player {
             { color: "blue", nb: 0 }
         ]
     }
+
+    rollADice() {
+    }
 }
 
 module.exports = { Player };
