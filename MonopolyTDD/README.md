@@ -39,6 +39,5 @@ MonopolyTDD
     │   └── Properties.js
     └── main.js
 
-M
 
 VERGE Romain

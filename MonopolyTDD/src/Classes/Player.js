@@ -1,4 +1,5 @@
-const { Gare } = require("./Gare.js");
+const { Gare } = require("./Gare");
+const { Properties } = require('./Properties')
 const scanf = require('scanf')
 
 class Player {
@@ -121,6 +122,49 @@ class Player {
                     properties.numberHouse += 1
                     console.log("Vous avez désormais " + properties.numberHouse + " maisons sur la case " + properties.name)
                 }
+            }
+        }
+    }
+
+    playerTurn(board) {
+        console.log("Cest le tour de " + this.name)
+        let a = this.rollADice()
+        let b = this.rollADice()
+        let roll = a + b
+        console.log(this.name + " a fais " + a + " et " + b)
+        this.move(board, roll)
+        if (this.actualPosition === 30) {
+            console.log("ALLEZ EN PRISON ! NE PASSEZ PAS PAR LA CASE DEPART !! ")
+            this.actualPosition = 10
+            return;
+        }
+        this.onAProperty(board.cells[this.actualPosition])
+    }
+
+    endTurn() {
+        let color = this.canBuild()
+        if (color !== null) {
+            this.build(color)
+        }
+        console.log("Le tour de " + this.name + " est terminé !\n")
+    }
+
+    onAProperty(property) {
+        if (property instanceof Properties) {
+            if (property.owner == null) {
+                this.buyAProperty(property)
+            } else {
+                this.payARent(property, property.owner)
+            }
+        } else {
+            if (property instanceof Gare) {
+                if (property.owner == null) {
+                    this.buyAProperty(property)
+                } else {
+                    this.payARent(property, property.owner)
+                }
+            } else {
+                console.log("Vous etes tombé sur la case " + property.name)
             }
         }
     }
