@@ -110,6 +110,20 @@ class Player {
         }
         return null
     }
+
+    build(color) {
+        for (let properties of this.propertiesList) {
+            if (properties.color === color) {
+                console.log("Voulez vous construire une maison sur le terrain " + properties.name + " ?\n La maison est au prix de " + properties.housePrice + " (y/n)")
+                let awnser = scanf('%s')
+                if (awnser === 'y') {
+                    this.money -= properties.housePrice
+                    properties.numberHouse += 1
+                    console.log("Vous avez désormais " + properties.numberHouse + " maisons sur la case " + properties.name)
+                }
+            }
+        }
+    }
 }
 
 module.exports = { Player };

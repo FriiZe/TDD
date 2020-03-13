@@ -145,4 +145,12 @@ describe('Test player', () => {
             assert.equal(player3.canBuild(), 'red')
         })
     })
+    describe('A player build', () => {
+        player3.build('red')
+        it('builded', () => {
+            assert.equal(player3.propertiesList[0].numberHouse, 1)
+            assert.equal(player3.propertiesList[1].numberHouse, 1)
+            assert.equal(player3.propertiesList[2].numberHouse, 1)
+        })
+    })
 })
