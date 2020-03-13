@@ -14,4 +14,31 @@ Le projet sera codé en JS, avec comme framework de tests Mocha et comme librair
 
 Il s’agira également de respecter au maximum le cycle Red => Green => Refactor et de les matérialiser via les différents commits
 
+Archi : 
+
+MonopolyTDD
+├── README.md
+├── package-lock.json
+├── package.json
+├── src
+│   ├── Classes
+│   │   ├── Board.js
+│   │   ├── Cell.js
+│   │   ├── Game.js
+│   │   ├── Gare.js
+│   │   ├── Player.js
+│   │   └── Properties.js
+│   └── main.js
+└── tests
+    ├── Classes
+    │   ├── Board.js
+    │   ├── Cell.js
+    │   ├── Game.js
+    │   ├── Gare.js
+    │   ├── Player.js
+    │   └── Properties.js
+    └── main.js
+
+M
+
 VERGE Romain
