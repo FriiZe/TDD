@@ -18,7 +18,7 @@ function init() {
 
     let start = new Cell("Départ", "Uncolored")
     let cell1 = new Properties("AngularJS", "brown", 60, 2, 10, 30, 90, 160, 250, 30, 50)
-    let duel = new Cell("Duel", "Uncolored")
+    let chance = new Cell("chance", "Uncolored")
     let cell2 = new Properties("ReactJS", "brown", 60, 2, 10, 30, 90, 160, 250, 30, 50)
     let cell3 = new Properties("VueJS", "brown", 80, 4, 20, 60, 180, 320, 450, 40, 50)
     let cell4 = new Gare("YnovCampusNantes")
@@ -50,10 +50,10 @@ function init() {
     let cell28 = new Properties("CodeBuds", "blue", 350, 35, 175, 500, 1100, 1300, 1500, 175, 200)
     let cell29 = new Properties("Wikodit", "blue", 400, 50, 200, 600, 1400, 1700, 2000, 200, 200)
 
-    board.init(start, cell1, duel, cell2, cell3, cell4, cell5, duel, cell6, cell7, visite, cell8,
-        duel, cell9, cell10, cell12, cell13, duel, cell14, cell15, shop, cell16, duel, cell17,
-        cell18, cell19, cell20, cell21, duel, cell22, prison, cell23, cell24, duel, cell25, cell26,
-        cell27, duel, cell28, cell29)
+    board.init(start, cell1, chance, cell2, cell3, cell4, cell5, chance, cell6, cell7, visite, cell8,
+        chance, cell9, cell10, cell12, cell13, chance, cell14, cell15, shop, cell16, chance, cell17,
+        cell18, cell19, cell20, cell21, chance, cell22, prison, cell23, cell24, chance, cell25, cell26,
+        cell27, chance, cell28, cell29)
 
     game.init(board, player1, player2, player3, player4)
     
