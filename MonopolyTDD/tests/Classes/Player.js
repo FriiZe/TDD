@@ -18,6 +18,8 @@ const gare1 = new Gare("YnovCampusNantes")
 const gare2 = new Gare("YnovCampusBordeaux")
 const gare3 = new Gare("YnovCampusLyon")
 const gare4 = new Gare("YnovCampusParis")
+let buyingProperty = new Properties("CodeBuds", "blue", 350, 35, 175, 500, 1100, 1300, 1500, 175, 200)
+
 
 const board = new Board()
 board.init(start, classicProperty, gare1, gare2, gare3, gare4)
@@ -118,5 +120,13 @@ describe('Test player', () => {
         it("Gain 200e by passing by departure", () => {
             assert.equal(player.money, 9750)
         })
-    }) 
+    })
+    describe("Buy a property", async () => {
+        it("Buy a property", async () => {
+            console.log(player.money)
+            await player.buyAProperty(buyingProperty)
+            assert.equal(player.money, 9400)
+            assert.equal(player.propertiesList[0], buyingProperty)
+        })
+    })
 })

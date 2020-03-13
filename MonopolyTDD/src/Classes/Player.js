@@ -1,4 +1,5 @@
 const { Gare } = require("./Gare.js");
+const scanf = require('scanf')
 
 class Player {
     constructor(name) {
@@ -77,6 +78,29 @@ class Player {
             this.money += 200
         } else {
             this.actualPosition += roll
+        }
+    }
+
+    buyAProperty(property) {
+        if (this.money - property.price >= 0) {
+            console.log("Voulez vous acheter " + property.name + " ? Il vous resterai " + (this.money - property.price) + " (y/n)")
+            let awnser = scanf('%s')
+            if (awnser === 'y') {
+                this.money -= property.price
+                this.propertiesList.push(property)
+                property.owner = this
+                for (let color of this.nbColors) {
+                    if (color.color === property.color) {
+                        color.nb += 1
+                        console.log("Désormais vous avez " + color.nb + " carte(s) de couleur " + color.color)
+                    }
+                }
+                console.log("Vous avez acheté " + property.name + "\n Il vous reste " + this.money)
+            } else {
+                console.log("Vous n'avez pas acheté " + property.name)
+            }
+        } else {
+            console.log("Vous n'avez pas assez d'argent pour acheter " + property.name)
         }
     }
 
