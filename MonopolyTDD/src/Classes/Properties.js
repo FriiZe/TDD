@@ -1,7 +1,7 @@
 const { Cell } = require("./Cell.js");
 
 class Properties extends Cell{
-    constructor(name, color, price, basicRent, oneHouseRent, twoHouseRent, threeHouseRent, fourHouseRent, hostelRent, hypotheque, housePrice){
+    constructor(name, color, price, basicRent, oneHouseRent, twoHouseRent, threeHouseRent, fourHouseRent, hostelRent, housePrice){
         super(name, color)
         this.price = price
         this.basicRent = basicRent
@@ -12,9 +12,7 @@ class Properties extends Cell{
         this.hostelRent = hostelRent
         this.numberHouse = 0
         this.owner = null
-        this.hypotheque = hypotheque
         this.housePrice = housePrice
-        this.ishypotheque = false
     }
 }
 

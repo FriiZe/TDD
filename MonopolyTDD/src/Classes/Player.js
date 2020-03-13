@@ -7,9 +7,6 @@ class Player {
         this.money = 1500
         this.propertiesList = []
         this.actualPosition = 0
-        this.nbDoubles = 0
-        this.willReplay = false
-        this.turnInJail = 0
         this.nbColors = [{ color: "brown", nb: 0 },
             { color: "clairBlue", nb: 0 },
             { color: "purple", nb: 0 },
