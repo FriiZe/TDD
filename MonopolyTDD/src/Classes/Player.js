@@ -104,6 +104,15 @@ class Player {
         }
     }
 
+    canBuild() {
+        for (let color of this.nbColors) {
+            if (color.nb === 3) {
+                console.log("Vous pouvez construire une maison sur la couleur " + color.color)
+                return (color.color)
+            }
+        }
+        return null
+    }
 }
 
 module.exports = { Player };

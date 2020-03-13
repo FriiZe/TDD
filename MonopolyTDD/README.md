@@ -7,9 +7,8 @@ Création et initialisation d’une partie avec des joueurs
 Déplacement des joueurs 
 Achat d’une propriété
 Payer le loyer standard d’une propriété
-Payer le loyer standard x2 si le propriétaire possède les 3 cases de la même couleur. 
-Aller en prison 
-Toucher le salaire lorsque l’on passe par la case Départ 
+Toucher le salaire lorsque l’on passe par la case Départ
+Gestion des constructions 
 
 Le projet sera codé en JS, avec comme framework de tests Mocha et comme librairie d’assertion Chai.
 

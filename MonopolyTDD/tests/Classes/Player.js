@@ -19,6 +19,9 @@ const gare2 = new Gare("YnovCampusBordeaux")
 const gare3 = new Gare("YnovCampusLyon")
 const gare4 = new Gare("YnovCampusParis")
 let buyingProperty = new Properties("CodeBuds", "blue", 350, 35, 175, 500, 1100, 1300, 1500, 175, 200)
+let canBuild = new Properties("JavaScript", "red", 220, 18, 90, 250, 700, 875, 1050, 110, 150)
+let canBuild1 = new Properties("HTML/CSS", "red", 220, 18, 90, 250, 700, 875, 1050, 110, 150)
+let canBuild2 = new Properties("SQL", "red", 240, 20, 100, 300, 750, 925, 1100, 120, 150)
 
 
 const board = new Board()
@@ -27,6 +30,7 @@ board.init(start, classicProperty, gare1, gare2, gare3, gare4)
 
 const player = new Player('Toto')
 const player2 = new Player('Tata')
+const player3 = new Player('Titi')
 
 
 describe('Test player', () => {
@@ -127,6 +131,18 @@ describe('Test player', () => {
             await player.buyAProperty(buyingProperty)
             assert.equal(player.money, 9400)
             assert.equal(player.propertiesList[0], buyingProperty)
+            
+        })
+    })
+    describe("A player can build", () => {
+        player3.buyAProperty(canBuild)
+        player3.buyAProperty(canBuild1)
+        player3.buyAProperty(canBuild2)
+        it('Can not build', () => {
+            assert.equal(player2.canBuild(), null)
+        })
+        it('Can build', () => {
+            assert.equal(player3.canBuild(), 'red')
         })
     })
 })
